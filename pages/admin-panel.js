@@ -42,6 +42,8 @@ const PostCard = ({ post }) => {
       .catch((err) => console.log(err));
   };
 
+  console.log(post);
+
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -88,6 +90,7 @@ const PostCard = ({ post }) => {
 
         <div className="action-btns">
           <Button
+            disabled={post.approved}
             variant="contained"
             color="primary"
             fullWidth
