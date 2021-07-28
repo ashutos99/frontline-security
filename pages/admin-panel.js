@@ -7,7 +7,7 @@ import baseUrl from "../helper/baseURL";
 
 export default function Admin({ token, posts }) {
   const work = posts.filter((post) => post.formName === "work");
-  if (work.length == 0) {
+  if (work.length == 0 || !work) {
     return (
       <div className="container row null">
         <h1>No applications yet</h1>
@@ -17,13 +17,14 @@ export default function Admin({ token, posts }) {
 
   return (
     <>
-      {work.map((post) => (
-        <div key={post._id} style={{ marginBottom: "1.5em" }}>
-          <div className="container">
-            <PostCard post={post} />
+      {work &&
+        work.map((post) => (
+          <div key={post._id} style={{ marginBottom: "1.5em" }}>
+            <div className="container">
+              <PostCard post={post} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </>
   );
 }
