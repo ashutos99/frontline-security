@@ -127,8 +127,11 @@ export async function getServerSideProps({ req, res }) {
     };
   }
 
-  const resp = await fetch(`${baseUrl}/api/admin/posts`);
-  const data = await resp.json();
+  const { data } = await axios.get(`${baseUrl}/api/admin/posts`, {
+    headers: {
+      authorization: token,
+    },
+  });
 
   return {
     props: { token: token, posts: data }, // will be passed to the page component as props

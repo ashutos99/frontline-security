@@ -54,6 +54,12 @@ body {
   .action-btns > * {
     margin: 0.75em 0;
   }
+  .wrapper {
+    flex: 2;
+  }
+  .action-btns {
+    flex: 1;
+  }
 }
 
 .null {
