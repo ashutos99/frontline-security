@@ -123,11 +123,7 @@ export async function getServerSideProps({ req, res }) {
     };
   }
 
-  const { data } = await axios.get(`${baseUrl}/api/admin/posts`, {
-    headers: {
-      Authorization: token,
-    },
-  });
+  const { data } = await axios.get(`${baseUrl}/api/admin/posts`);
 
   return {
     props: { token: token, posts: data }, // will be passed to the page component as props
