@@ -5,26 +5,25 @@ import { useState } from "react";
 
 import baseUrl from "../helper/baseURL";
 
-export default function Admin({ token }) {
-  // const work = posts.filter((post) => post.formName === "work");
-  // if (work.length == 0) {
-  //   return (
-  //     <div className="container row null">
-  //       <h1>No applications yet</h1>
-  //     </div>
-  //   );
-  // }
-  console.log(token);
+export default function Admin({ token, posts }) {
+  const work = posts.filter((post) => post.formName === "work");
+  if (work.length == 0) {
+    return (
+      <div className="container row null">
+        <h1>No applications yet</h1>
+      </div>
+    );
+  }
+
   return (
     <>
-      <h1>Admin</h1>
-      {/* {work.map((post) => (
+      {work.map((post) => (
         <div key={post._id} style={{ marginBottom: "1.5em" }}>
           <div className="container">
             <PostCard post={post} />
           </div>
         </div>
-      ))} */}
+      ))}
     </>
   );
 }
@@ -114,23 +113,23 @@ const PostCard = ({ post }) => {
 export async function getServerSideProps({ req, res }) {
   const { token } = parseCookies(req);
 
-  // if (!token) {
-  //   return {
-  //     redirect: {
-  //       permanent: false,
-  //       destination: "/",
-  //     },
-  //     props: {},
-  //   };
-  // }
+  if (!token) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/",
+      },
+      props: {},
+    };
+  }
 
-  // const { data } = await axios.get(`${baseUrl}/api/admin/posts`, {
-  //   headers: {
-  //     Authorization: token,
-  //   },
-  // });
+  const { data } = await axios.get(`${baseUrl}/api/admin/posts`, {
+    headers: {
+      Authorization: token,
+    },
+  });
 
   return {
-    props: { token: token }, // will be passed to the page component as props
+    props: { token: token, posts: data }, // will be passed to the page component as props
   };
 }
