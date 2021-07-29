@@ -12,8 +12,7 @@ export default function Footer() {
               About <span>us</span>
             </h2>
             <p>
-              We are the leading security agency in Uttar Pradesh, specializing
-              in private security in the Lucknow Region
+            We, the Frontline Security, are the leader in the field of Security Guards of Every Requirement is Registered under the Private Security Agencies (Regulation) Act, 2005.
             </p>
           </div>
           <div className="footer-card">
@@ -25,12 +24,12 @@ export default function Footer() {
               <br /> Uttar Pradesh
               <br /> P : +91-9984-183-277
               <br /> F : 0522-4233205
-              <br /> E : expu@email.com
+              <br /> E : support@frontlineservices.in
             </p>
           </div>
         </div>
         <div className="last">
-          All Rights Reserved. Frontline Securities & Manpower Company. 2020
+        Ⓒ2021 All Rights Reserved. Frontline Securities & Manpower Company.
         </div>
       </div>
     </footer>
