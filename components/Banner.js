@@ -16,10 +16,9 @@ export default function Banner() {
       <div className="container row">
         <div className="banner-text">
           <h3>Frontline Security & Manpower</h3>
-          <h1>Security Service</h1>
+          <h1>Security Services</h1>
           <p>
-            We are the leading security agency in Uttar Pradesh, specializing in
-            private security in the Lucknow Region.
+          We, the Frontline Security, are the leader in the field of Security Guards of Every Requirement is Registered under the Private Security Agencies (Regulation) Act, 2005. We are inviting applications for different posts in our company kindly fill your details at Apply Online Page.
           </p>
           <div className="cta">
             <Link href="/work-with-us">
